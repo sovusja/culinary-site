@@ -1,10 +1,11 @@
 import React from "react";
 import "./Header.scss";
 import CartIcon from "../../img/pngwing.com.png";
+import LogoIcon from "../../img/png-clipart-spaghetti-illustration-pasta-italian-cuisine-spaghetti-with-meatballs-pasta-food-face-thumbnail.png";
 import MenuElement from "../menuElement/MenuElement";
 
 const Header = () => {
-  const menu = [
+  const menuHeader = [
     {
       id: 1,
       text: "HOME",
@@ -24,19 +25,15 @@ const Header = () => {
   ];
 
   return (
-    <div className="header">
-      <img
-        className="header__logo"
-        src="https://t4.ftcdn.net/jpg/00/79/53/65/360_F_79536533_d2pTf2eJZMLMvyq7lXpT5DvQl5fe5ktZ.jpg"
-        alt="LOGO"
-      />
-      <div className="header__menu">
-        {menu.map((link) => (
+    <header className="header">
+      <img className="header__logo" src={LogoIcon} alt="LOGO" />
+      <nav className="header__menu">
+        {menuHeader.map((link) => (
           <MenuElement key={link.id} text={link.text} />
         ))}
-      </div>
+      </nav>
       <img className="header__cart" src={CartIcon} alt="CART" />
-    </div>
+    </header>
   );
 };
 

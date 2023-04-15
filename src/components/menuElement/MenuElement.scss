@@ -1,6 +1,11 @@
+@import "../../global.scss";
 .menu {
-  color: #ffffff;
+  color: $white-light;
   display: flex;
-  padding-right: 20px;
-  font-size: 14px;
+  font-size: 12px;
+  font-weight: 400;
+  transition: $basic-animation;
+  &:hover {
+    color: $green-light;
+  }
 }

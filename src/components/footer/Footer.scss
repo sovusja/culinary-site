@@ -1,0 +1,45 @@
+@import "../../global.scss";
+.footer {
+  display: flex;
+  flex-direction: column;
+  margin-top: 51px;
+  height: 300px;
+  background-color: $gray-light;
+  align-items: center;
+  &__logo {
+    margin-top: 25px;
+    height: 60px;
+    width: 90px;
+  }
+  &__menu {
+    display: flex;
+    flex-direction: row;
+    margin-top: 25px;
+    width: 400px;
+    justify-content: space-between;
+  }
+  &__social-menu {
+    margin-top: 30px;
+    display: flex;
+    width: 400px;
+    justify-content: space-between;
+    .social__menu {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      border: 1px solid $white-light;
+      box-sizing: border-box;
+      transition: $basic-animation;
+      &:hover {
+        background-color: $green-light;
+      }
+      .social__icon {
+        width: 35px;
+        height: 35px;
+      }
+    }
+  }
+}
