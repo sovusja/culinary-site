@@ -1,0 +1,27 @@
+@import "../../global.scss";
+
+.hero-banner {
+  margin-top: 60px;
+  width: 100%;
+  height: 300px;
+  background-image: url("../../img/bg-bunner-2.jpg");
+  background-position: center;
+  color: $white-light;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  &__welcome {
+    font-family: $font-serif;
+    font-size: 32px;
+    line-height: 1.5;
+    text-transform: uppercase;
+  }
+  &__text {
+    font-family: $font-popins;
+    font-size: 18px;
+    line-height: 1.1;
+    height: 100px;
+    width: 600px;
+  }
+}

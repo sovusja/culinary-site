@@ -1,9 +1,17 @@
+@import url("https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@1,400;1,700&family=Poppins:wght@300;500&display=swap");
+
 //Colors
 
 $gray-light: #4d4e53;
 $white-light: #ffffff;
 $green-light: #5fbe52;
+$fongray-light: #eeeef1;
 
 //Animation
 
 $basic-animation: all ease 0.3s;
+
+// Fonts
+
+$font-serif: "PT Serif", sans-serif;
+$font-popins: "Popins", sans-serif;

@@ -1,0 +1,9 @@
+@import "../../global.scss";
+.icons-menu {
+  display: flex;
+  flex-direction: column;
+  .icon {
+    width: 150px;
+    height: 150px;
+  }
+}

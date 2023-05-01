@@ -1,0 +1,23 @@
+@import "../../global.scss";
+.sweets {
+  display: flex;
+  width: 100%;
+  height: 450px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #f15656;
+  &__offer {
+    padding-top: 50px;
+  }
+  &__text {
+    width: 500px;
+  }
+  &__icons-menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 70%;
+    height: 200px;
+  }
+}
