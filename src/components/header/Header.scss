@@ -12,14 +12,17 @@
   &__logo {
     height: 45px;
     border-radius: 20px;
+    cursor: pointer;
   }
   &__menu {
     display: flex;
     width: 300px;
     justify-content: space-between;
+    cursor: pointer;
   }
   &__cart {
     height: 45px;
     border-radius: 5px;
+    cursor: pointer;
   }
 }

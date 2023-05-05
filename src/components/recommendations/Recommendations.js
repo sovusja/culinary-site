@@ -1,7 +1,7 @@
 import React from "react";
 import "./Recommendations.scss";
 import IceCrema from "../../img/010.jpg";
-import Coffe from "../../img/011.jpg";
+import Coffe from "../../img/012.jpg";
 import Marmalade from "../../img/09.jpg";
 import RecommendationElement from "../recommendationsElement/RecommendationElement";
 

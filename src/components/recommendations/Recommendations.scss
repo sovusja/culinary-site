@@ -6,7 +6,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: #f15656;
+  background-color: $white-light;
   &__offer {
     padding-top: 50px;
   }
@@ -17,7 +17,7 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    width: 70%;
+    width: 60%;
     height: 200px;
   }
 }
