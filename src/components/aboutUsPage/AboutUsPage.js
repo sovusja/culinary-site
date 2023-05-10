@@ -4,6 +4,7 @@ import AboutBanner from "../../img/breadcrumbs.jpg";
 import HeroBanner from "../heroBanner/HeroBanner";
 import AboutUsAbout from "../aboutUsAbout/AboutUsAbout";
 import Reviews from "../reviews/Reviews";
+import Advantages from "../advantages/Advantages";
 
 const AboutUsPage = () => {
   const aboutBanner = {
@@ -13,13 +14,14 @@ const AboutUsPage = () => {
   };
 
   return (
-    <div>
+    <div className="about-us-page">
       <HeroBanner
         img={aboutBanner.backgroundImg}
         title={aboutBanner.title}
         text={aboutBanner.text}
       />
       <AboutUsAbout />
+      <Advantages />
       <Reviews />
     </div>
   );
