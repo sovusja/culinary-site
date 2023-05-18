@@ -1,0 +1,83 @@
+@import "../../global.scss";
+
+.card {
+  width: 300px;
+  height: 460px;
+  background-color: #dadadd;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 15px;
+  border-radius: 20px;
+  &_product {
+    width: 290px;
+    height: 290px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    &-img {
+      width: 250px;
+      height: 250px;
+      border-radius: 10px;
+      margin-top: 25px;
+      transition: $basic-animation;
+      &:hover {
+        width: 290px;
+        height: 290px;
+        margin-bottom: 3px;
+      }
+    }
+  }
+  &_name {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: $font-serif;
+    font-size: 17px;
+    margin: auto;
+    margin-bottom: 10px;
+  }
+  &_text {
+    font-family: $font-popins;
+    font-size: 13px;
+    margin: auto;
+  }
+  &_price {
+    font-family: $font-popins;
+    align-self: flex-end;
+    margin-top: auto;
+  }
+  &_buttons {
+    display: flex;
+    justify-content: space-around;
+    gap: 10px;
+    margin-bottom: 15px;
+    &-cart {
+      background-color: $white-light;
+      font-family: $font-serif;
+      font-size: 13px;
+      border-radius: 10px;
+      padding: 5px 15px;
+      border: none;
+      cursor: pointer;
+      &:hover {
+        filter: brightness(0.9);
+      }
+    }
+    &-details {
+      background-color: $white-light;
+      font-family: $font-serif;
+      font-size: 13px;
+      border-radius: 10px;
+      padding: 5px 15px;
+      border: none;
+      cursor: pointer;
+      &:hover {
+        filter: brightness(0.9);
+      }
+    }
+  }
+}

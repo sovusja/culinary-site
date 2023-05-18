@@ -1,5 +1,6 @@
 import "./App.scss";
-import AboutUsPage from "./components/aboutUsPage/AboutUsPage";
+import Catalog from "./components/catalog/Catalog";
+// import AboutUsPage from "./components/aboutUsPage/AboutUsPage";
 import Footer from "./components/footer/Footer";
 import Header from "./components/header/Header";
 // import Home from "./components/home/Home";
@@ -9,7 +10,8 @@ function App() {
     <div className="App">
       <Header />
       {/* <Home /> */}
-      <AboutUsPage />
+      {/* <AboutUsPage /> */}
+      <Catalog />
       <Footer />
     </div>
   );
