@@ -1,0 +1,70 @@
+@import "../../global.scss";
+.product {
+  margin-top: 60px;
+  margin-left: 100px;
+  width: 1600px;
+  height: 700px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #de6de2;
+
+  &__name {
+    font-family: $font-serif;
+  }
+
+  &__info {
+    background-color: #eb4a88;
+    width: 1300px;
+    height: 500px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+    &-images {
+      background-color: #8a28e6;
+      width: 500px;
+      height: 500px;
+    }
+
+    &-text {
+      width: 500px;
+      margin-top: 50px;
+      font-family: $font-popins;
+
+      &-price {
+        display: flex;
+        justify-content: end;
+      }
+
+      &-small-text {
+        font-family: $font-serif;
+        padding-top: 20px;
+      }
+
+      &_card {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        padding-top: 20px;
+
+        &-btn {
+          padding: 5px 25px;
+          border-radius: 9px;
+        }
+      }
+
+      &-long-text {
+        font-family: $font-serif;
+        padding-top: 20px;
+        padding-bottom: 30px;
+      }
+
+      &-allergens {
+        display: flex;
+        justify-content: start;
+      }
+    }
+  }
+}
