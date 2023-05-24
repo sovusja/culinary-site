@@ -5,6 +5,12 @@ import ProductCard from "../productCard/ProductCard";
 import Category1 from "../../img/category1.svg";
 import Category2 from "../../img/category2.svg";
 import Category3 from "../../img/category3.svg";
+import Eggs from "../../img/eggs.png";
+import Chocolate from "../../img/chocolate.png";
+import Nuts from "../../img/nuts.png";
+import Berries from "../../img/berries.png";
+import Citrus from "../../img/citrus.png";
+import { useLocation } from "react-router-dom";
 
 const Catalog = () => {
   const client = createClient({
@@ -14,6 +20,13 @@ const Catalog = () => {
 
   const [product, setProduct] = useState([]);
   const [activeCategory, setActiveCategory] = useState("bakary");
+  const [activeAllergens, setActiveAllergens] = useState([]);
+
+  const filtred = product.filter((item) => {
+    return !activeAllergens.some((el) => item.fields.allergens.includes(el));
+  });
+
+  const location = useLocation();
 
   useEffect(() => {
     client
@@ -26,6 +39,24 @@ const Catalog = () => {
       })
       .catch(console.error);
   }, [activeCategory]);
+
+  useEffect(() => {
+    const searchParam = new URLSearchParams(location.search);
+    const currCategory = searchParam.get("category");
+    if (currCategory) {
+      setActiveCategory(currCategory);
+    }
+
+    client
+      .getEntries({
+        content_type: "product",
+        "fields.category": currCategory,
+      })
+      .then((response) => {
+        setProduct(response.items);
+      })
+      .catch(console.error);
+  }, []);
 
   const menuCategory = [
     {
@@ -45,8 +76,45 @@ const Catalog = () => {
     },
   ];
 
-  const clickHandler = (name) => {
+  const menuAllergens = [
+    {
+      id: 1,
+      name: "eggs",
+      img: Eggs,
+    },
+    {
+      id: 2,
+      name: "chocolate",
+      img: Chocolate,
+    },
+    {
+      id: 3,
+      name: "nuts",
+      img: Nuts,
+    },
+    {
+      id: 4,
+      name: "berries",
+      img: Berries,
+    },
+    {
+      id: 5,
+      name: "citrus",
+      img: Citrus,
+    },
+  ];
+
+  const clickHandlerCategory = (name) => {
     setActiveCategory(name);
+  };
+
+  const clickHandlerAllergens = (name) => {
+    if (!activeAllergens.includes(name)) {
+      setActiveAllergens((prev) => [...prev, name]);
+    } else {
+      const filtred = activeAllergens.filter((elem) => elem !== name);
+      setActiveAllergens(filtred);
+    }
   };
 
   return (
@@ -61,7 +129,7 @@ const Catalog = () => {
                     ? "catalog_filters-category-wraper-active"
                     : "catalog_filters-category-wraper"
                 }`}
-                onClick={() => clickHandler(link.name)}
+                onClick={() => clickHandlerCategory(link.name)}
                 key={link.id}
               >
                 <img
@@ -73,15 +141,37 @@ const Catalog = () => {
             );
           })}
         </div>
+        <div className="catalog_filters-allergens">
+          {menuAllergens.map((link) => {
+            return (
+              <div
+                className={`${
+                  activeAllergens.includes(link.name)
+                    ? "catalog_filters-allergens-wraper-active"
+                    : "catalog_filters-allergens-wraper"
+                }`}
+                onClick={() => clickHandlerAllergens(link.name)}
+                key={link.id}
+              >
+                <img
+                  className="catalog_filters-allergens-image"
+                  alt={link.name}
+                  src={link.img}
+                />
+              </div>
+            );
+          })}
+        </div>
       </div>
       <div className="catalog_element">
-        {product.map((product) => (
+        {filtred.map((product) => (
           <ProductCard
             key={product.sys.id}
             name={product?.fields?.name}
             price={product?.fields?.price}
             text={product?.fields?.shortDescription}
             image={product?.fields?.image.fields.file.url}
+            sku={product?.fields?.Sku}
           />
         ))}
       </div>

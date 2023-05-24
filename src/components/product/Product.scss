@@ -1,57 +1,132 @@
 @import "../../global.scss";
 .product {
-  margin-top: 60px;
-  margin-left: 100px;
-  width: 1600px;
-  height: 700px;
+  width: 100%;
+  height: 800px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  background-color: #de6de2;
+  justify-content: flex-start;
+  position: relative;
+
+  &_back {
+    position: absolute;
+    top: 70px;
+    left: 12.5%;
+    padding: 5px 25px;
+    border-radius: 9px;
+    font-family: $font-popins;
+    font-size: 25px;
+    background-color: #f5f5f5;
+    border: none;
+    cursor: pointer;
+  }
 
   &__name {
     font-family: $font-serif;
+    font-size: 65px;
+    margin-top: 25px;
+    margin-bottom: 15px;
   }
 
   &__info {
-    background-color: #eb4a88;
-    width: 1300px;
-    height: 500px;
+    background-color: #e4e4e4;
+    border-radius: 25px;
+    width: 75%;
+    height: 600px;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    padding-right: 30px;
 
     &-images {
-      background-color: #8a28e6;
-      width: 500px;
-      height: 500px;
+      width: 600px;
+      height: 600px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-around;
+
+      &_img {
+        width: 450px;
+        border-radius: 30px;
+      }
     }
 
     &-text {
-      width: 500px;
+      width: 700px;
       margin-top: 50px;
       font-family: $font-popins;
+      font-size: 20px;
 
       &-price {
         display: flex;
-        justify-content: end;
+        justify-content: start;
+        font-family: $font-popins;
+        font-size: 30px;
       }
 
       &-small-text {
         font-family: $font-serif;
-        padding-top: 20px;
+      }
+
+      &-allergens {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 25px;
+
+        &-icon {
+          width: 70px;
+        }
       }
 
       &_card {
         display: flex;
         flex-direction: row;
-        justify-content: space-around;
+        justify-content: space-between;
         padding-top: 20px;
+
+        &-click {
+          display: flex;
+          gap: 5px;
+          .card-click_minus {
+            width: 50px;
+            height: 50px;
+            border-radius: 7px;
+            border: none;
+            background-color: #f5f5f5;
+            font-family: $font-popins;
+            font-size: 25px;
+          }
+          .card-click_plus {
+            width: 50px;
+            height: 50px;
+            border-radius: 7px;
+            border: none;
+            background-color: #f5f5f5;
+            font-family: $font-popins;
+            font-size: 25px;
+          }
+          .card-click_quantity {
+            width: 100px;
+            height: 50px;
+            border-radius: 5px;
+            background-color: #f5f5f5;
+            border: none;
+            text-align: center;
+            font-family: $font-popins;
+            font-size: 25px;
+            font-weight: 600;
+          }
+        }
 
         &-btn {
           padding: 5px 25px;
           border-radius: 9px;
+          font-family: $font-popins;
+          font-size: 25px;
+          background-color: #f5f5f5;
+          border: none;
         }
       }
 
@@ -59,11 +134,6 @@
         font-family: $font-serif;
         padding-top: 20px;
         padding-bottom: 30px;
-      }
-
-      &-allergens {
-        display: flex;
-        justify-content: start;
       }
     }
   }
