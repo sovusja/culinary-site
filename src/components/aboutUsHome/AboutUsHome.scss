@@ -1,32 +1,47 @@
 @import "../../global.scss";
 .abouthome {
   width: 100%;
-  height: 300px;
   background-color: $fongray-light;
   display: flex;
-  justify-content: space-around;
   align-items: center;
+  gap: 5%;
+  padding: 3% 10%;
+
+  @include media-tablet {
+  }
+
+  @include media-mobile {
+    flex-direction: column;
+  }
+
   &__img {
     display: flex;
     width: 200px;
     height: 200px;
-    margin-top: 50px;
     position: relative;
     align-items: flex-end;
     justify-content: center;
+
     &-person {
       width: 180px;
       height: 200px;
       position: absolute;
     }
+
     &-fon {
       width: 200px;
       height: 180px;
     }
   }
+
   &__text {
     display: flex;
     flex-direction: column;
-    width: 700px;
+    margin: none;
+
+    &-us {
+      font-family: $font-serif;
+      font-size: 30px;
+    }
   }
 }

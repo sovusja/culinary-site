@@ -1,0 +1,45 @@
+@import "../../global.scss";
+
+.cart {
+  width: 100%;
+  height: auto;
+  background-color: #84ecdf;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 25px 0;
+  min-height: calc(100vh - 350px);
+
+  &-catalog {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 55%;
+  }
+
+  &-order {
+    display: flex;
+    flex-direction: column;
+    background-color: #4fc47c;
+    margin-right: 6%;
+    padding: 0 2%;
+    border-radius: 20px;
+    width: 250px;
+    height: 200px;
+
+    &_result {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+
+      &-text {
+        padding: 0;
+        margin: 0;
+      }
+    }
+
+    &_btn {
+      border-radius: 9px;
+    }
+  }
+}

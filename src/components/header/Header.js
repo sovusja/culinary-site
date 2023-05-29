@@ -42,7 +42,12 @@ const Header = () => {
           <MenuElement key={link.id} link={link.link} text={link.text} />
         ))}
       </nav>
-      <img className="header__cart" src={CartIcon} alt="CART" />
+      <img
+        className="header__cart"
+        src={CartIcon}
+        alt="CART"
+        onClick={() => navigate("/cart")}
+      />
     </header>
   );
 };
