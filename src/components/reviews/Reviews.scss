@@ -2,13 +2,15 @@
 
 .review {
   width: 100%;
-  height: 400px;
+  height: auto;
   background: url(../../img/bg-bunner-2.jpg);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   color: $white-light;
+  padding: 9% 10%;
+
   filter: brightness(0.9);
   &__title {
     font-family: $font-serif;

@@ -163,6 +163,7 @@ const Catalog = () => {
           })}
         </div>
       </div>
+      <button className="catalog-filters-btn">SHOW FILTERS</button>
       <div className="catalog_element">
         {filtred.map((product) => (
           <ProductCard
