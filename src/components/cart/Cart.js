@@ -1,14 +1,24 @@
 import React from "react";
 import "./Cart.scss";
 import CartElement from "../cartElement/CartElement";
+import { useSelector } from "react-redux";
 
 const Cart = () => {
+  const cart = useSelector((state) => state.cartReducer.cart);
+
   return (
     <div className="cart">
       <div className="cart-catalog">
-        <CartElement />
-        <CartElement />
-        <CartElement />
+        {cart.map((elem) => (
+          <CartElement
+            key={elem.sku}
+            image={elem.image}
+            price={elem.price}
+            quantity={elem.quantity}
+            name={elem.name}
+            sku={elem.sku}
+          />
+        ))}
       </div>
       <div className="cart-order">
         <p className="cart-order_text">Підсумок</p>

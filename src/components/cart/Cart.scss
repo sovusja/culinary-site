@@ -3,34 +3,57 @@
 .cart {
   width: 100%;
   height: auto;
-  background-color: #84ecdf;
+  background-color: $white-light;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  padding: 25px 0;
+  padding: 25px 4%;
   min-height: calc(100vh - 350px);
+
+  @include media-mobile {
+    flex-direction: column;
+    gap: 10px;
+    justify-content: space-between;
+    align-items: center;
+  }
 
   &-catalog {
     display: flex;
     flex-direction: column;
     gap: 10px;
-    width: 55%;
+    width: 70%;
+
+    @include media-mobile {
+      width: 97%;
+    }
   }
 
   &-order {
     display: flex;
     flex-direction: column;
-    background-color: #4fc47c;
-    margin-right: 6%;
-    padding: 0 2%;
+    background-color: #dbdbdb;
+    padding: 10px 2%;
     border-radius: 20px;
-    width: 250px;
+    width: 28%;
     height: 200px;
+    gap: 10px;
+
+    @include media-mobile {
+      width: 90%;
+      height: auto;
+    }
 
     &_result {
       display: flex;
       flex-direction: column;
       justify-content: space-around;
+
+      @include media-mobile {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-column-gap: 10px;
+        grid-row-gap: 15px;
+      }
 
       &-text {
         padding: 0;

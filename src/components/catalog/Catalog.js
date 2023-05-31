@@ -45,17 +45,16 @@ const Catalog = () => {
     const currCategory = searchParam.get("category");
     if (currCategory) {
       setActiveCategory(currCategory);
+      client
+        .getEntries({
+          content_type: "product",
+          "fields.category": currCategory,
+        })
+        .then((response) => {
+          setProduct(response.items);
+        })
+        .catch(console.error);
     }
-
-    client
-      .getEntries({
-        content_type: "product",
-        "fields.category": currCategory,
-      })
-      .then((response) => {
-        setProduct(response.items);
-      })
-      .catch(console.error);
   }, []);
 
   const menuCategory = [

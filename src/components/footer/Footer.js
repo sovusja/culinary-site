@@ -76,13 +76,8 @@ const Footer = () => {
       </nav>
       <div className="footer__social-menu">
         {social.map((link) => (
-          <div className="social__menu">
-            <img
-              className="social__icon"
-              key={link.id}
-              alt={link.text}
-              src={link.src}
-            />
+          <div key={link.id} className="social__menu">
+            <img className="social__icon" alt={link.text} src={link.src} />
           </div>
         ))}
       </div>

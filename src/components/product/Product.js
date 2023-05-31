@@ -7,6 +7,7 @@ import Chocolate from "../../img/chocolate.png";
 import Nuts from "../../img/nuts.png";
 import Berries from "../../img/berries.png";
 import Citrus from "../../img/citrus.png";
+import { useDispatch } from "react-redux";
 
 const Product = () => {
   const [quantity, setQuantity] = useState(1);
@@ -14,6 +15,7 @@ const Product = () => {
 
   const navigate = useNavigate();
   const location = useLocation();
+  const dispatch = useDispatch();
   const searchParam = new URLSearchParams(location.search);
   const currSku = searchParam.get("sku");
 
@@ -57,6 +59,19 @@ const Product = () => {
     setQuantity(e.target.value);
   };
 
+  const clickHandler = () => {
+    dispatch({
+      type: "ADD_TO_CART",
+      payload: {
+        sku: currSku,
+        name: product.name,
+        price: product.price,
+        image: product.image,
+        quantity,
+      },
+    });
+  };
+
   if (!product) {
     return;
   }
@@ -88,8 +103,10 @@ const Product = () => {
               if (!imgMap[elem]) {
                 return null;
               }
+
               return (
                 <img
+                  key={elem}
                   className="product__info-text-allergens-icon"
                   src={imgMap[elem]}
                 />
@@ -113,7 +130,12 @@ const Product = () => {
                 +
               </button>
             </div>
-            <button className="product__info-text_card-btn">Add to cart</button>
+            <button
+              onClick={clickHandler}
+              className="product__info-text_card-btn"
+            >
+              Add to cart
+            </button>
           </div>
         </div>
       </div>

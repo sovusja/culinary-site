@@ -119,11 +119,12 @@
     }
 
     &-allergens {
-      margin: 40px 15px;
+      margin: 40px 0px;
       display: grid;
       grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
       grid-column-gap: 10px;
       grid-row-gap: 15px;
+      align-items: center;
 
       @include media-tablet {
         grid-column-gap: 5px;
