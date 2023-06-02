@@ -65,7 +65,7 @@
       }
 
       @include media-mobile {
-        background-color: #6989f1;
+        justify-content: center;
       }
 
       &-wraper {
@@ -82,10 +82,6 @@
           width: 70px;
           height: 70px;
           padding: 0;
-        }
-
-        @include media-mobile {
-          background-color: #142357;
         }
 
         &-active {
@@ -132,10 +128,6 @@
         margin: 0;
       }
 
-      @include media-mobile {
-        background-color: #53608d;
-      }
-
       &-wraper {
         display: flex;
         justify-content: center;
@@ -145,10 +137,6 @@
         border-radius: 50%;
         border: 1px solid #000;
         cursor: pointer;
-
-        @include media-mobile {
-          background-color: #4c879e;
-        }
 
         &-active {
           display: flex;
@@ -161,10 +149,6 @@
           background-color: #a5a2a2;
           cursor: pointer;
           filter: grayscale(1);
-
-          @include media-mobile {
-            background-color: #634791;
-          }
         }
       }
 
@@ -195,5 +179,33 @@
       grid-template-columns: 1fr;
       justify-items: center;
     }
+  }
+}
+.popup__filter {
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba($color: #000000, $alpha: 0.5);
+  position: fixed;
+  display: none;
+  top: 50px;
+  left: 0;
+  z-index: 4;
+  justify-content: center;
+
+  @include media-mobile {
+    display: flex;
+  }
+
+  &-content {
+    width: 90%;
+    height: calc(30% - 50px);
+    background-color: #ececec;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
   }
 }

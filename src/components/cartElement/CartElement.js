@@ -44,6 +44,7 @@ const CartElement = (props) => {
             type="number"
             className="cart-elem__info-click_quantity"
             value={quantity}
+            readOnly
           />
           <button
             onClick={increseHandler}

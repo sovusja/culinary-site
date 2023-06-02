@@ -9,20 +9,101 @@
   position: sticky;
   top: 0;
   z-index: 15;
+
+  @include media-mobile {
+    justify-content: space-between;
+    padding: 0 25px;
+  }
+
   &__logo {
     height: 45px;
     border-radius: 20px;
     cursor: pointer;
   }
+
   &__menu {
     display: flex;
     width: 300px;
     justify-content: space-between;
     cursor: pointer;
+
+    @include media-mobile {
+      display: none;
+    }
   }
-  &__cart {
-    height: 45px;
-    border-radius: 5px;
-    cursor: pointer;
+
+  &__icon {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+
+    &-cart {
+      height: 45px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    &-popup-btn {
+      height: 30px;
+      border-radius: 5px;
+      cursor: pointer;
+      display: none;
+
+      @include media-mobile {
+        display: block;
+      }
+    }
+  }
+}
+
+.popup {
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba($color: #000000, $alpha: 0.5);
+  position: fixed;
+  display: none;
+  justify-content: flex-end;
+  align-items: flex-end;
+  top: 0;
+  left: 0;
+  z-index: 5;
+
+  @include media-mobile {
+    display: flex;
+  }
+
+  &-content {
+    width: 80%;
+    height: calc(100% - 50px);
+    background-color: white;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #000000;
+
+    &-menu {
+      display: flex;
+      flex-direction: column;
+      margin-top: 50px;
+      gap: 25px;
+
+      &-elem {
+        font-family: $font-serif;
+        font-size: 35px;
+        background-color: #e2e2e2;
+        padding: 5px 25px;
+        border-radius: 15px;
+        text-decoration: none;
+        color: #000000;
+        transition: $basic-animation;
+        &:hover {
+          color: $green-light;
+        }
+      }
+    }
   }
 }

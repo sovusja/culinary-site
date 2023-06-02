@@ -2,10 +2,20 @@
 .menu {
   color: $white-light;
   display: flex;
+  font-family: $font-popins;
   font-size: 12px;
   font-weight: 400;
   transition: $basic-animation;
   &:hover {
     color: $green-light;
+  }
+
+  @include media-mobile {
+    font-family: $font-serif;
+    font-size: 15px;
+
+    &:hover {
+      color: $green-light;
+    }
   }
 }
