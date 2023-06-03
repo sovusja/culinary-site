@@ -54,7 +54,7 @@ const CartElement = (props) => {
           </button>
         </div>
       </div>
-      <p className="cart-elem__sum">{price * quantity}</p>
+      <p className="cart-elem__sum">${price * quantity}</p>
       <button className="cart-elem__delete" onClick={deleteHandler}>
         <img className="cart-elem__delete-image" src={Delete} />
       </button>

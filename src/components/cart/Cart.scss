@@ -34,13 +34,18 @@
     background-color: #dbdbdb;
     padding: 10px 2%;
     border-radius: 20px;
-    width: 28%;
+    width: 25%;
     height: 200px;
     gap: 10px;
 
     @include media-mobile {
       width: 90%;
       height: auto;
+    }
+
+    &_text {
+      font-family: $font-serif;
+      font-size: 20px;
     }
 
     &_result {
@@ -56,6 +61,8 @@
       }
 
       &-text {
+        font-family: $font-popins;
+        font-size: 15px;
         padding: 0;
         margin: 0;
       }
@@ -63,6 +70,11 @@
 
     &_btn {
       border-radius: 9px;
+      padding: 3px 15px;
+      transition: $basic-animation;
+      &:hover {
+        color: $green-light;
+      }
     }
   }
 }

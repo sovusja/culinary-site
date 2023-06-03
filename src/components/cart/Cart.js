@@ -6,9 +6,16 @@ import { useSelector } from "react-redux";
 const Cart = () => {
   const cart = useSelector((state) => state.cartReducer.cart);
 
+  const subTotal = cart.reduce((acc, elem) => {
+    return acc + elem.price * elem.quantity;
+  }, 0);
+
+  const total = subTotal * 0.9;
+
   return (
     <div className="cart">
       <div className="cart-catalog">
+        {!cart.length && <h1>There is no items in the cart</h1>}
         {cart.map((elem) => (
           <CartElement
             key={elem.sku}
@@ -21,15 +28,13 @@ const Cart = () => {
         ))}
       </div>
       <div className="cart-order">
-        <p className="cart-order_text">Підсумок</p>
+        <p className="cart-order_text">SUMMARIES</p>
         <div className="cart-order_result">
-          <p className="cart-order_result-text">Загальна сума 2</p>
-          <p className="cart-order_result-text">Знижка 10%</p>
-          <p className="cart-order_result-text">До сплати 6</p>
-
-          <p className="cart-order_result-sum">num</p>
+          <p className="cart-order_result-text">Subtotal ${subTotal}</p>
+          <p className="cart-order_result-text">Discount 10%</p>
+          <p className="cart-order_result-text">Total ${total}</p>
         </div>
-        <button className="cart-order_btn">Оформити замовлення</button>
+        <button className="cart-order_btn">PLACE ORDER</button>
       </div>
     </div>
   );

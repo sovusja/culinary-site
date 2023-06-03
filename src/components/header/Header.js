@@ -5,8 +5,10 @@ import PopupIcon from "../../img/svgviewer-output.svg";
 import LogoIcon from "../../img/png-clipart-spaghetti-illustration-pasta-italian-cuisine-spaghetti-with-meatballs-pasta-food-face-thumbnail.png";
 import MenuElement from "../menuElement/MenuElement";
 import { useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 const Header = () => {
+  const cart = useSelector((state) => state.cartReducer.cart);
   const navigate = useNavigate();
   const menuHeader = [
     {
@@ -33,6 +35,10 @@ const Header = () => {
     }
   };
 
+  const quantity = cart.reduce((acc, elem) => {
+    return acc + elem.quantity;
+  }, 0);
+
   return (
     <>
       <header className="header">
@@ -47,19 +53,24 @@ const Header = () => {
             <MenuElement key={link.id} link={link.link} text={link.text} />
           ))}
         </nav>
-        <div className="header__icon">
+        <div className="header__icons">
           <img
-            className="header__icon-popup-btn"
+            className="header__icons-popup-btn"
             src={PopupIcon}
             alt="POPUP"
             onClick={() => setIsOpen((prev) => !prev)}
           />
-          <img
-            className="header__icon-cart"
-            src={CartIcon}
-            alt="CART"
-            onClick={() => navigate("/cart")}
-          />
+          <div className="header__icons-cart">
+            {quantity > 0 && (
+              <div className="header__icons-cart-counter">{quantity}</div>
+            )}
+            <img
+              className="header__icons-cart-icon"
+              src={CartIcon}
+              alt="CART"
+              onClick={() => navigate("/cart")}
+            />
+          </div>
         </div>
       </header>
 
