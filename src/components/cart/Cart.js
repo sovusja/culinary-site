@@ -1,16 +1,12 @@
 import React from "react";
 import "./Cart.scss";
 import CartElement from "../cartElement/CartElement";
-import { useSelector } from "react-redux";
+import useCart from "../../hooks/useCart";
 
 const Cart = () => {
-  const cart = useSelector((state) => state.cartReducer.cart);
+  const { cart, total, subTotal } = useCart({});
 
-  const subTotal = cart.reduce((acc, elem) => {
-    return acc + elem.price * elem.quantity;
-  }, 0);
-
-  const total = subTotal * 0.9;
+  console.log(cart);
 
   return (
     <div className="cart">

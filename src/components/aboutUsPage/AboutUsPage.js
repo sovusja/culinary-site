@@ -2,7 +2,7 @@ import React from "react";
 import "./AboutUsPage.scss";
 import AboutBanner from "../../img/breadcrumbs.jpg";
 import HeroBanner from "../heroBanner/HeroBanner";
-import AboutUsAbout from "../aboutUsAbout/AboutUsAbout";
+import AboutUsPromo from "../aboutUsPromo/AboutUsPromo";
 import Reviews from "../reviews/Reviews";
 import Advantages from "../advantages/Advantages";
 
@@ -20,7 +20,7 @@ const AboutUsPage = () => {
         title={aboutBanner.title}
         text={aboutBanner.text}
       />
-      <AboutUsAbout />
+      <AboutUsPromo />
       <Advantages />
       <Reviews />
     </div>

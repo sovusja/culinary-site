@@ -1,4 +1,5 @@
 @import "../../global.scss";
+
 .abouthome {
   width: 100%;
   background-color: $fongray-light;
@@ -6,9 +7,6 @@
   align-items: center;
   gap: 5%;
   padding: 3% 10%;
-
-  @include media-tablet {
-  }
 
   @include media-mobile {
     flex-direction: column;

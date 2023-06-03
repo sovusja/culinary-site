@@ -14,10 +14,11 @@ const ProductCard = (props) => {
       payload: { sku, name, price, image, quantity: 1 },
     });
   };
+
   return (
     <div className="card">
       <div className="card_product">
-        <img className="card_product-img" alt="photo" src={image} />
+        <img className="card_product-img" alt="Product" src={image} />
       </div>
       <h3 className="card_name">{name}</h3>
       <p className="card_text">{text}</p>

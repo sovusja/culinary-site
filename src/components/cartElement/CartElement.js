@@ -1,34 +1,16 @@
 import React from "react";
 import "./CartElement.scss";
 import Delete from "../../img/delete.png";
-import { useDispatch } from "react-redux";
+import useCart from "../../hooks/useCart";
 
 const CartElement = (props) => {
   const { image, name, price, quantity, sku } = props;
-  const dispatch = useDispatch();
 
-  const deleteHandler = () => {
-    dispatch({
-      type: "DELETE_FROM_CART",
-      payload: { sku },
-    });
-  };
-  const increseHandler = () => {
-    dispatch({
-      type: "INCRESE_QUANTITY",
-      payload: { sku },
-    });
-  };
-  const decreseHandler = () => {
-    dispatch({
-      type: "DECRESE_QUANTITY",
-      payload: { sku },
-    });
-  };
+  const { deleteHandler, increseHandler, decreseHandler } = useCart({ sku });
 
   return (
     <div className="cart-elem">
-      <img className="cart-elem__image" src={image} />
+      <img className="cart-elem__image" src={image} alt="Product" />
       <div className="cart-elem__info">
         <h2 className="cart-elem__info-name">{name}</h2>
         <p className="cart-elem__info-price">${price}</p>
@@ -56,7 +38,7 @@ const CartElement = (props) => {
       </div>
       <p className="cart-elem__sum">${price * quantity}</p>
       <button className="cart-elem__delete" onClick={deleteHandler}>
-        <img className="cart-elem__delete-image" src={Delete} />
+        <img className="cart-elem__delete-image" src={Delete} alt="Delete" />
       </button>
     </div>
   );

@@ -11,28 +11,33 @@
   align-items: center;
   color: $white-light;
   padding: 9% 10%;
-
   filter: brightness(0.9);
+
   &__title {
     font-family: $font-serif;
     font-size: 28px;
   }
+
   &__text {
     font-family: $font-popins;
     font-size: 18px;
     margin-bottom: 30px;
   }
+
   &__button {
     display: flex;
     flex-direction: row;
+
     &-img {
       height: 75px;
       width: 75px;
       border-radius: 25px;
       margin: 0 10px;
+
       &:hover {
         box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.3);
       }
+
       &-active {
         border: 3px solid $green-light;
       }
